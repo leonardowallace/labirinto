@@ -3,25 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labirinto</title>
-    <link rel="stylesheet" href="style.css">
+    
+	<!--============REMIXICCONS==============-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+
+	<!--================CSS==============-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+	<title>Labirinto</title>
 </head>
 <body>
-    <div id="container">
-	<div class="mbox">
-	<div id="maze">
-		<div id="thingie">
-            <p>Leo</p>
-			<div class="emo" id="emo">🥺</div>
-		</div>
-		<div id="home">
-            <p class="thau">Drª. Thau</p>
-			<div class="emo">👩‍⚕️</div>
-		</div>
-		<div class="barrier" id="top"></div>
-		<div class="barrier" id="bottom"></div>
+    <!--============HEADER==============-->
+<header class="game__header">
+	<div class="game__logo">
+		<i class="ri-baidu-line"></i>
+		<h2 class="game__title">Leve Maple para Casa</h2>
 	</div>
+</header>
+
+<div class="game__container container" id="container">
+	<div class="mbox">
+		<div class="game__maze" id="maze">
+			<div class="maple" id="thingie">
+				<span class="emo maple" id="emo">🐕</span>
+			</div>
+
+			<div class="maple__home" id="home">
+				<i class="ri-home-4-line emo"></i>
+			</div>
+
+			<div class="barrier" id="top"></div>
+			<div class="barrier" id="bottom"></div>
 		</div>
+	</div>
+
 	<div class="controls">
 		<div class="buttons">
 			<button class="btn" id="bu"><div class="chevron">↑</div></button>
@@ -31,6 +46,6 @@
 		</div>
 	</div>
 </div>
-</body>
-<script src="interatividade.js"></script>
+
+<script src="assets/js/main.js"></script>
 </html>

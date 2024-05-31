@@ -408,83 +408,14 @@ let prevl = 0;
 function updateEmo(lr) {
 	//simple/manual emo-adjustment - old
 	if (lr) {
-		if (thingie.offsetLeft < maxl) {
-			emo.innerHTML = "🙄";
-		}
-		if (thingie.offsetLeft < maxl - 2 * step) {
-			emo.innerHTML = "😒";
-		}
-		if (thingie.offsetLeft < maxl - 4 * step) {
-			emo.innerHTML = "😣";
-		}
-		if (thingie.offsetLeft < maxl - 6 * step) {
-			emo.innerHTML = "🤬";
-		}
-		if (thingie.offsetLeft > prevl) {
-			emo.innerHTML = "😐";
-		}
-		if (thingie.offsetLeft >= maxl) {
-			if (thingie.offsetLeft > mazeWidth * 0.6) {
-				emo.innerHTML = "😀";
-			} else {
-				emo.innerHTML = "🙂";
-			}
-			maxl = thingie.offsetLeft;
-		}
-		if (thingie.offsetLeft === 0) {
-			emo.innerHTML = "😢";
-		}
-		if (
-			thingie.offsetLeft > mazeWidth - step &&
-			thingie.offsetTop === home.offsetTop
-		) {
-			emo.innerHTML = "🤗";
-			home.innerHTML = "👩‍⚕️";
-		}
 		if (thingie.offsetLeft > mazeWidth) {
 			emo.innerHTML = "";
-			home.innerHTML = "💏";
-		}
-		prevl = thingie.offsetLeft;
-	} else {
-		if (thingie.offsetLeft > (mazeWidth - step) && thingie.offsetTop === home.offsetTop) {
-			emo.innerHTML = "🤗";
-		}else{
-			if(thingie.offsetLeft > (mazeWidth - step) && thingie.offsetTop != home.offsetTo){
-				emo.innerHTML = "🙄";
-			}
+			window.alert("Parabéns, Maple está em casa!!!")
+            location.reload()
 		}
 	}
 
-	// 	//Variant: Detect distance to target using old Greeks: Phytagoras (More scientifically interesting, but somehow less funny 🙃)
-	// 	let h = home.offsetLeft - thingie.offsetLeft;
-	// 	let v = Math.abs(home.offsetTop - thingie.offsetTop);
-	// 	let dist = Math.hypot(h, v);
-	// 	console.log(h, v, dist);
 
-	// 	//dist = h;
-
-	// 	//dynamic stuff
-	// 	if (dist <= prevDist) {
-	// 		//happy
-	// 		emo.innerHTML = "😀";
-	// 	} else {
-	// 		//sad
-	// 		emo.innerHTML = "🙄";
-	// 	}
-
-	// 	//fixed values
-	// 	if (dist === 20) {
-	// 		emo.innerHTML = "🤗";
-	// 	}
-	// 	if (dist === 0) {
-	// 		emo.innerHTML = "🥳";
-	// 		home.innerHTML = "";
-	// 	} else {
-	// 		home.innerHTML = "🏠";
-	// 	}
-
-	// 	prevDist = dist;
 }
 
 //navigate with tilting

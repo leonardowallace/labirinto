@@ -1,0 +1,314 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
+
+/*=============== Variaveis CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+  /*========== Colors ==========*/
+  --hue: 230;
+  --first-color: #025951;
+  --first-color-light: #0CF25D;
+  --first-color-alt: #038C3E;
+  --title-color: hsl(var(--hue), 30%, 95%);
+  --text-color: hsl(var(--hue), 20%, 80%);
+  --text-color-light: hsl(var(--hue), 20%, 70%);
+  --body-color: #011922;
+  --container-color: #025951;
+
+  /*========== Fontes ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Syne", sans-serif;
+  --biggest-font-size: 3rem;
+  --big-font-size: 1.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsividade ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --big-font-size: 2rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1.125rem;
+    --small-font-size: .875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  touch-action: pan-y;
+}
+
+input,
+button,
+textarea {
+  border: none;
+  outline: none;
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+p {
+  line-height: 130%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*===============  CSS CLASSES REUTILIZADAS ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 2rem;
+}
+
+.section__title {
+  text-align: center;
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: 2rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+
+/*==========HEADER==============*/
+.game__header{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+	z-index: var(--z-fixed);
+}
+
+.game__logo{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: .5rem;
+}
+
+.game__title,
+.game__logo i{
+	font-size: 2.5rem;
+	color: pink;
+}
+
+.game__container{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: grid;
+	grid-template-rows: 60% 40%;
+}
+
+.game__maze{
+	position: absolute;
+	width: 340px;
+	height: 240px;
+	/*background: #39a;
+	
+	align-self: center;
+	justify-self: center;
+	place-self: center center;*/
+	top: 30vh;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.maple{
+	font-size: 2.5rem;
+}
+
+.maple__home i{
+	font-size: 2.5rem;
+	color: pink;
+}
+
+.mbox,
+.controls {
+	height: 100%;
+	display: grid;
+}
+
+.mbox {
+}
+
+.buttons {
+	width: 210px;
+	height: 140px;
+	align-self: center;
+	justify-self: center;
+	display: grid;
+	grid-template-rows: 70px 70px;
+	grid-template-columns: 70px 70px 70px;
+}
+
+.btn {
+	width: 60px;
+	height: 60px;
+	border: 2px #fff solid;
+	border-bottom: 2px #fff solid;
+	align-self: center;
+	justify-self: center;
+	cursor: pointer;
+	border-radius: 8px;
+	display: grid;
+	/*box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.2);*/
+}
+.chevron {
+	height: 20px;
+	width: 20px;
+	align-self: center;
+	justify-self: center;
+	color: #222;
+	font-size: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: #fff;
+}
+
+#bu {
+	grid-column-start: 2;
+}
+#bd {
+	grid-column-start: 2;
+	grid-row-start: 2;
+}
+#bl {
+	grid-column-start: 1;
+	grid-row-start: 2;
+}
+#br {
+	grid-column-start: 3;
+	grid-row-start: 2;
+}
+
+#thingie,
+#home {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	border-radius: 20px;
+	transition: all .1s;
+}
+
+.emo {
+	position: absolute;
+	top: 4px;
+	left: 1px;
+	width: 10px;
+	height: 13px;
+	border-radius: 20px;
+	font-size: 15px;
+	line-height: 15px;
+	text-align: left;
+}
+
+.barrier {
+	position: absolute;
+	background: #fff;
+}
+
+#top {
+	top: 20px;
+	left: 20px;
+	width: 300px;
+	height: 2px;
+}
+
+#bottom {
+	top: 220px;
+	left: 20px;
+	width: 302px;
+	height: 2px;
+}
+
+/*style reset*/
+button {
+	display: inline-block;
+	border: none;
+	padding: none;
+	margin: 0;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+button:hover,
+button:focus {
+	-webkit-appearance: none;
+}
+
+button:focus {
+	outline: none;
+}
+
+button:active {
+	transform: scale(1);
+	-webkit-appearance: none;
+}
